@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Claims;
@@ -141,7 +142,8 @@ namespace Microsoft.AspNetCore.Mvc.Razor
         /// <param name="tagHelperTypeName">Full name of the tag helper <see cref="Type"/>.</param>
         /// <param name="propertyName">Dictionary property in the tag helper.</param>
         /// <returns>An error message about using an indexer when the tag helper property is <c>null</c>.</returns>
-        public static string InvalidTagHelperIndexerAssignment(
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public string InvalidTagHelperIndexerAssignment(
             string attributeName,
             string tagHelperTypeName,
             string propertyName)
